@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package netcal;
+
+// Describes a network in network calculus
+message Network {
+  int32 id = 1;
+  repeated Server server = 2;
+  repeated Flow flow = 3;
+}
+
+// Server description
+message Server {
+  int32 id = 1;
+
+  // Service curve parameters
+  double rate = 2;
+  double latency = 3;
+}
+
+// Flow description
+message Flow {
+  int32 id = 1;
+
+  // Arrival curve parameters
+  double rate = 2;
+  double burst = 3;
+
+  // List of server ids traversed by the flow
+  repeated int32 path = 4;
+
+  // Delay bounds for arbitrary multiplexing
+  Result pmoo = 5;
+  FPResult pmoofp = 6;
+
+  // Delay bounds for FIFO multiplexing
+  Result deborah = 7;
+  FPResult deborahfp = 8;
+}
+
+message Result {
+  double delay_bound = 1;
+}
+
+message FPResult {
+  // Delay bound of the foi
+  // This corresponds to the minimum of the delay bounds found by exploring the different combinations
+  double delay_bound = 1;
+
+  // List of the different flow prolongation which have been evaluated
+  repeated FPCombination explored_combination = 2;
+}
+
+// Describes a combination of cross-flows prolongations
+message FPCombination {
+  // Delay bound of the foi of this particular flow prolongation
+  double delay_bound = 1;
+
+  // Describes where the different cross-flows are being prolonged
+  // Map key: Flow id of the flow being prolonged
+  // Map value: Server id to which the flow has been prolonged
+  map<int32, int32> flows_prolongation = 2;
+}
