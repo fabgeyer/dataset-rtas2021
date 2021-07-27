@@ -1,6 +1,6 @@
 # Tightening Network Calculus Delay Bounds by Predicting Flow Prolongations in the FIFO Analysis
 
-This repository contains the dataset used for the paper _"Tightening Network Calculus Delay Bounds by Predicting Flow Prolongations in the FIFO Analysis"_ publish at the [27th IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS 2021)](http://2021.rtas.org/). We refer to the paper for a full explanation of the methodology used for generating the dataset.
+This repository contains the dataset used for the paper [_"Tightening Network Calculus Delay Bounds by Predicting Flow Prolongations in the FIFO Analysis"_](https://doi.org/10.1109/RTAS52030.2021.00021) publish at the [27th IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS 2021)](http://2021.rtas.org/). We refer to the paper for a full explanation of the methodology used for generating the dataset.
 
 
 ## Citation
@@ -14,6 +14,7 @@ If you use this dataset for your research, please include the following referenc
 	booktitle = {Proceedings of the 27th IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS 2021)},
 	year      = {2021},
 	month     = may,
+	doi       = {10.1109/RTAS52030.2021.00021},
 }
 ```
 
@@ -47,3 +48,7 @@ $ cd dataset-rtas2021
 $ pip3 install --upgrade pbzlib
 $ python3 example.py path/to/dataset-train.pbz
 ```
+
+## License
+
+The data in this repository is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0).
