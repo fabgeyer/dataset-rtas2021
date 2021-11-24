@@ -45,7 +45,7 @@ To get it and execute it:
 ```
 $ git clone https://github.com/fabgeyer/dataset-rtas2021.git
 $ cd dataset-rtas2021
-$ pip3 install --upgrade pbzlib
+$ pip3 install -r requirements.txt
 $ python3 example.py path/to/dataset-train.pbz
 ```
 
